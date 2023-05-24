@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wceu2023/quiz",
+	"version": "1.0.0",
+	"title": "Quiz",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Make a quiz",
+	"attributes": {
+		"question": {
+			"type": "string"
+		},
+		"typeOfQuiz": {
+			"type": "string",
+			"enum": [ "boolean", "input" ],
+			"default": "boolean"
+		},
+		"answer": {
+			"type": [ "string", "boolean" ],
+			"default": true
+		}
+	},
+	"textdomain": "wceu2023",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

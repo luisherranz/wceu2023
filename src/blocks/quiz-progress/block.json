@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wceu2023/quiz-progress",
+	"version": "1.0.0",
+	"title": "Quiz Progress",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Show the quiz progress and check the answers",
+	"textdomain": "wceu2023",
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}

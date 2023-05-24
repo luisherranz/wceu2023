@@ -1,0 +1,29 @@
+{
+	"name": "wceu2023",
+	"version": "1.0.0",
+	"description": "WordCampp Europe 2023: Building Interactive Blocks, a step-by-step workshop",
+	"author": "luisherranz",
+	"scripts": {
+		"start": "concurrently 'wp-scripts start' 'wp-now start'",
+		"dev": "wp-scripts start",
+		"build": "wp-scripts build"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.4.0",
+		"@wp-now/wp-now": "^0.1.49",
+		"concurrently": "^8.0.1",
+		"prettier": "npm:wp-prettier@2.8.5"
+	},
+	"prettier": {
+		"useTabs": true,
+		"tabWidth": 4,
+		"printWidth": 80,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"bracketSameLine": false,
+		"bracketSpacing": true,
+		"parenSpacing": true,
+		"semi": true,
+		"arrowParens": "always"
+	}
+}
