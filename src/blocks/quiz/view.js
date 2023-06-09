@@ -11,8 +11,13 @@ store( {
 					? state.wceu2023.closeText
 					: state.wceu2023.openText;
 			},
-			isActive: ( { context } ) =>
-				context.wceu2023.answer === context.wceu2023.thisAnswer,
+			isActive: ( { state, context } ) => {
+				const id = context.wceu2023.id;
+				return (
+					state.wceu2023.quizzes[ id ].current ===
+					context.wceu2023.thisAnswer
+				);
+			},
 		},
 	},
 	actions: {
@@ -32,12 +37,13 @@ store( {
 					).focus();
 				}
 			},
-			answer: ( { context } ) => {
-				const answer = context.wceu2023.thisAnswer;
-				if ( context.wceu2023.answer === answer ) {
-					context.wceu2023.answer = null;
+			answer: ( { state, context } ) => {
+				const id = context.wceu2023.id;
+				const quiz = state.wceu2023.quizzes[ id ];
+				if ( quiz.current !== context.wceu2023.thisAnswer ) {
+					quiz.current = context.wceu2023.thisAnswer;
 				} else {
-					context.wceu2023.answer = answer;
+					quiz.current = null;
 				}
 			},
 		},

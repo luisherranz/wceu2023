@@ -7,7 +7,11 @@
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Show the quiz progress and check the answers",
+	"supports": {
+		"interactivity": true
+	},
 	"textdomain": "wceu2023",
 	"editorScript": "file:./index.js",
-	"render": "file:./render.php"
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
 }
