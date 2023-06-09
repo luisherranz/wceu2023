@@ -1,11 +1,6 @@
 import { store } from '@wordpress/interactivity';
 
 store( {
-	state: {
-		wceu2023: {
-			selected: null,
-		},
-	},
 	selectors: {
 		wceu2023: {
 			isOpen: ( { state, context } ) =>

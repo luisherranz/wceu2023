@@ -4,6 +4,7 @@ $unique_id = substr(uniqid(), -5);
 wp_store( array(
 	'state' => array(
 		'wceu2023' => array(
+			'selected' => null,
 			'openText' => __( 'Open menu' ),
 			'closeText' => __( 'Close menu' ),
 		)
