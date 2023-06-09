@@ -19,6 +19,7 @@ wp_store( array(
 		'wceu2023' => array(
 			'toggleText' => __( 'Open menu' ),
 			'isActive' => false,
+			'inputAnswer' => null
 		)
 	)
 ) );
@@ -71,6 +72,7 @@ wp_store( array(
 				type="text"
 				data-wp-effect="effects.wceu2023.focusOnOpen"
 				data-wp-on--input="actions.wceu2023.answerInput"
+				data-wp-bind--value="selectors.wceu2023.inputAnswer"
 			>
 
 		<?php endif; ?>

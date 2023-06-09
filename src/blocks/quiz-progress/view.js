@@ -28,6 +28,12 @@ store( {
 				state.wceu2023.showAnswers = true;
 				state.wceu2023.selected = null;
 			},
+			reset: ( { state } ) => {
+				state.wceu2023.showAnswers = false;
+				Object.values( state.wceu2023.quizzes ).forEach( ( quiz ) => {
+					quiz.current = null;
+				} );
+			},
 		},
 	},
 } );

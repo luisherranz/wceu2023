@@ -18,6 +18,10 @@ store( {
 					context.wceu2023.thisAnswer
 				);
 			},
+			inputAnswer: ( { state, context } ) => {
+				const id = context.wceu2023.id;
+				return state.wceu2023.quizzes[ id ].current || '';
+			},
 		},
 	},
 	actions: {

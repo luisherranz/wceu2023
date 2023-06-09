@@ -31,10 +31,17 @@ $store = wp_store( array(
 
 	<div>
 		<button
+			data-wp-bind--hidden="state.wceu2023.showAnswers"
 			data-wp-bind--disabled="!selectors.wceu2023.allAnswered"
 			data-wp-on--click="actions.wceu2023.checkAnswers"
 		>
 			<?php echo __( 'Check your answers' ); ?>
+		</button>
+		<button
+			data-wp-bind--hidden="!state.wceu2023.showAnswers"
+			data-wp-on--click="actions.wceu2023.reset"
+		>
+			<?php echo __( 'Reset' ); ?>
 		</button>
 	</div>
 
