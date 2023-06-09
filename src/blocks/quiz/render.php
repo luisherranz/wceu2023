@@ -1,4 +1,8 @@
-<div <?php echo get_block_wrapper_attributes(); ?>>
+<div
+	<?php echo get_block_wrapper_attributes(); ?>
+	data-wp-interactive
+	data-wp-context='{ "wceu2023": { "isOpen": false } }'
+>
 	<div>
 		<strong>
 			<?php echo __( 'Question' ) . ": "; ?>
@@ -7,7 +11,7 @@
 		<?php echo $attributes[ 'question' ]; ?>
 	</div>
 
-	<div>
+	<div data-wp-bind--hidden="!context.wceu2023.isOpen">
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
 			<button>
 				<?php echo __( 'Yes' ); ?>

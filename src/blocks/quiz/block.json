@@ -7,6 +7,9 @@
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Make a quiz",
+	"supports": {
+		"interactivity": true
+	},
 	"attributes": {
 		"question": {
 			"type": "string"
