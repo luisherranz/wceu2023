@@ -1,5 +1,19 @@
 <?php
 $unique_id = substr(uniqid(), -5);
+
+wp_store( array(
+	'state' => array(
+		'wceu2023' => array(
+			'openText' => __( 'Open menu' ),
+			'closeText' => __( 'Close menu' ),
+		)
+	),
+	'selectors' => array(
+		'wceu2023' => array(
+			'toggleText' => __( 'Open menu' ),
+		)
+	)
+) );
 ?>
 
 <div

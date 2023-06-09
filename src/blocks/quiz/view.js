@@ -11,8 +11,10 @@ store( {
 			isOpen: ( { state, context } ) =>
 				state.wceu2023.selected === context.wceu2023.id,
 			toggleText: ( store ) => {
-				const { selectors } = store;
-				return selectors.wceu2023.isOpen( store ) ? 'Close' : 'Open';
+				const { selectors, state } = store;
+				return selectors.wceu2023.isOpen( store )
+					? state.wceu2023.closeText
+					: state.wceu2023.openText;
 			},
 		},
 	},
