@@ -7,6 +7,12 @@ wp_store( array(
 			'selected' => null,
 			'openText' => __( 'Open menu' ),
 			'closeText' => __( 'Close menu' ),
+			'quizzes' => array(
+				$unique_id => array( 
+					'current' => null, 
+					'correct' => $attributes['answer']
+				)
+			)
 		)
 	),
 	'selectors' => array(
