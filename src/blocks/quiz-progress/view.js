@@ -14,6 +14,20 @@ store( {
 					Object.keys( state.wceu2023.quizzes ).length
 				);
 			},
+			correct: ( { state } ) =>
+				state.wceu2023.showAnswers
+					? Object.values( state.wceu2023.quizzes ).filter(
+							( v ) => v.current === v.correct
+					  ).length
+					: '?',
+		},
+	},
+	actions: {
+		wceu2023: {
+			checkAnswers: ( { state } ) => {
+				state.wceu2023.showAnswers = true;
+				state.wceu2023.selected = null;
+			},
 		},
 	},
 } );
