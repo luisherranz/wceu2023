@@ -53,14 +53,14 @@ wp_store( array(
 			<button
 				data-wp-context='{ "wceu2023": { "thisAnswer": true } }'
 				data-wp-effect="effects.wceu2023.focusOnOpen"
-				data-wp-on--click="actions.wceu2023.answer"
+				data-wp-on--click="actions.wceu2023.answerBoolean"
 				data-wp-class--active="selectors.wceu2023.isActive"
 			>
 				<?php echo __( 'Yes' ); ?>
 			</button>
 			<button
 				data-wp-context='{ "wceu2023": { "thisAnswer": false } }'
-				data-wp-on--click="actions.wceu2023.answer"
+				data-wp-on--click="actions.wceu2023.answerBoolean"
 				data-wp-class--active="selectors.wceu2023.isActive"
 			>
 				<?php echo __( 'No' ); ?>
@@ -70,6 +70,7 @@ wp_store( array(
 			<input
 				type="text"
 				data-wp-effect="effects.wceu2023.focusOnOpen"
+				data-wp-on--input="actions.wceu2023.answerInput"
 			>
 
 		<?php endif; ?>

@@ -37,7 +37,7 @@ store( {
 					).focus();
 				}
 			},
-			answer: ( { state, context } ) => {
+			answerBoolean: ( { state, context } ) => {
 				const id = context.wceu2023.id;
 				const quiz = state.wceu2023.quizzes[ id ];
 				if ( quiz.current !== context.wceu2023.thisAnswer ) {
@@ -45,6 +45,11 @@ store( {
 				} else {
 					quiz.current = null;
 				}
+			},
+			answerInput: ( { state, context, event } ) => {
+				const id = context.wceu2023.id;
+				state.wceu2023.quizzes[ id ].current =
+					event.target.value || null;
 			},
 		},
 	},
