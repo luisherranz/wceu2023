@@ -50,7 +50,10 @@ wp_store( array(
 			</button>
 
 		<?php elseif ( $attributes['typeOfQuiz'] === 'input'): ?>
-			<input type="text">
+			<input
+				type="text"
+				data-wp-effect="effects.wceu2023.focusOnOpen"
+			>
 
 		<?php endif; ?>
 	</div>
