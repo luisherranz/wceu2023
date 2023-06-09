@@ -12,6 +12,8 @@ wp_store( array(
 	'selectors' => array(
 		'wceu2023' => array(
 			'toggleText' => __( 'Open menu' ),
+			'isAnswerYes' => false,
+			'isAnswerNo' => false,
 		)
 	)
 ) );
@@ -46,13 +48,13 @@ wp_store( array(
 			<button
 				data-wp-effect="effects.wceu2023.focusOnOpen"
 				data-wp-on--click="actions.wceu2023.answerYes"
-				data-wp-class--active="context.wceu2023.answer"
+				data-wp-class--active="selectors.wceu2023.isAnswerYes"
 			>
 				<?php echo __( 'Yes' ); ?>
 			</button>
 			<button
 				data-wp-on--click="actions.wceu2023.answerNo"
-				data-wp-class--active="!context.wceu2023.answer"
+				data-wp-class--active="selectors.wceu2023.isAnswerNo"
 			>
 				<?php echo __( 'No' ); ?>
 			</button>

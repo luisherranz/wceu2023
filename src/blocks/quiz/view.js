@@ -11,6 +11,8 @@ store( {
 					? state.wceu2023.closeText
 					: state.wceu2023.openText;
 			},
+			isAnswerYes: ( { context } ) => context.wceu2023.answer === true,
+			isAnswerNo: ( { context } ) => context.wceu2023.answer === false,
 		},
 	},
 	actions: {
@@ -31,10 +33,18 @@ store( {
 				}
 			},
 			answerYes: ( { context } ) => {
-				context.wceu2023.answer = true;
+				if ( context.wceu2023.answer === true ) {
+					context.wceu2023.answer = null;
+				} else {
+					context.wceu2023.answer = true;
+				}
 			},
 			answerNo: ( { context } ) => {
-				context.wceu2023.answer = false;
+				if ( context.wceu2023.answer === false ) {
+					context.wceu2023.answer = null;
+				} else {
+					context.wceu2023.answer = false;
+				}
 			},
 		},
 	},
