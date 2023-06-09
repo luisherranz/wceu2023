@@ -22,6 +22,14 @@ store( {
 					state.wceu2023.selected = context.wceu2023.id;
 				}
 			},
+			closeOnEsc: ( { state, event, ref } ) => {
+				if ( event.key === 'Escape' ) {
+					state.wceu2023.selected = null;
+					ref.querySelector(
+						'button[aria-controls^="quiz-"]'
+					).focus();
+				}
+			},
 		},
 	},
 	effects: {

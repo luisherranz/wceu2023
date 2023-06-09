@@ -21,6 +21,7 @@ wp_store( array(
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive
 	data-wp-context='{ "wceu2023": { "id": "<?php echo $unique_id; ?>" } }'
+	data-wp-on--keydown="actions.wceu2023.closeOnEsc"
 >
 	<div>
 		<strong>
