@@ -20,7 +20,7 @@ wp_store( array(
 <div
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive
-	data-wp-context='{ "wceu2023": { "id": "<?php echo $unique_id; ?>" } }'
+	data-wp-context='{ "wceu2023": { "id": "<?php echo $unique_id; ?>", "answer": null } }'
 	data-wp-on--keydown="actions.wceu2023.closeOnEsc"
 >
 	<div>
@@ -43,10 +43,17 @@ wp_store( array(
 		id="quiz-<?php echo $unique_id; ?>"
 	>
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
-			<button data-wp-effect="effects.wceu2023.focusOnOpen">
+			<button
+				data-wp-effect="effects.wceu2023.focusOnOpen"
+				data-wp-on--click="actions.wceu2023.answerYes"
+				data-wp-class--active="context.wceu2023.answer"
+			>
 				<?php echo __( 'Yes' ); ?>
 			</button>
-			<button>
+			<button
+				data-wp-on--click="actions.wceu2023.answerNo"
+				data-wp-class--active="!context.wceu2023.answer"
+			>
 				<?php echo __( 'No' ); ?>
 			</button>
 

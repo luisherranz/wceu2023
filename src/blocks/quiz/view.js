@@ -30,6 +30,12 @@ store( {
 					).focus();
 				}
 			},
+			answerYes: ( { context } ) => {
+				context.wceu2023.answer = true;
+			},
+			answerNo: ( { context } ) => {
+				context.wceu2023.answer = false;
+			},
 		},
 	},
 	effects: {
