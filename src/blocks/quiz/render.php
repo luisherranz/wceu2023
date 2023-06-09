@@ -42,7 +42,7 @@ wp_store( array(
 		id="quiz-<?php echo $unique_id; ?>"
 	>
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
-			<button>
+			<button data-wp-effect="effects.wceu2023.focusOnOpen">
 				<?php echo __( 'Yes' ); ?>
 			</button>
 			<button>

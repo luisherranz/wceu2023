@@ -24,4 +24,14 @@ store( {
 			},
 		},
 	},
+	effects: {
+		wceu2023: {
+			focusOnOpen: ( store ) => {
+				const { selectors, ref } = store;
+				if ( selectors.wceu2023.isOpen( store ) ) {
+					ref.focus();
+				}
+			},
+		},
+	},
 } );
