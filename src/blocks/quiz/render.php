@@ -18,9 +18,8 @@ $unique_id = substr(uniqid(), -5);
 			data-wp-on--click="actions.wceu2023.toggle"
 			data-wp-bind--aria-expanded="selectors.wceu2023.isOpen"
 			aria-controls="quiz-<?php echo $unique_id; ?>"
-		>
-			<?php echo __( 'Open' ); ?>
-		</button>
+			data-wp-text="selectors.wceu2023.toggleText"
+		></button>
 	</div>
 
 	<div

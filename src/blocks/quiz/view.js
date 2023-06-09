@@ -10,6 +10,10 @@ store( {
 		wceu2023: {
 			isOpen: ( { state, context } ) =>
 				state.wceu2023.selected === context.wceu2023.id,
+			toggleText: ( { state, context } ) =>
+				state.wceu2023.selected === context.wceu2023.id
+					? 'Close'
+					: 'Open',
 		},
 	},
 	actions: {
