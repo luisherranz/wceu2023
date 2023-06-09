@@ -15,7 +15,11 @@ store( {
 	actions: {
 		wceu2023: {
 			toggle: ( { state, context } ) => {
-				state.wceu2023.selected = context.wceu2023.id;
+				if ( state.wceu2023.selected === context.wceu2023.id ) {
+					state.wceu2023.selected = null;
+				} else {
+					state.wceu2023.selected = context.wceu2023.id;
+				}
 			},
 		},
 	},
