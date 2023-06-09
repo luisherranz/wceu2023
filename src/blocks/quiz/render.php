@@ -1,3 +1,7 @@
+<?php
+$unique_id = substr(uniqid(), -5);
+?>
+
 <div
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive
@@ -10,12 +14,19 @@
 
 		<?php echo $attributes[ 'question' ]; ?>
 
-		<button data-wp-on--click="actions.wceu2023.toggle">
+		<button
+			data-wp-on--click="actions.wceu2023.toggle"
+			data-wp-bind--aria-expanded="context.wceu2023.isOpen"
+			aria-controls="quiz-<?php echo $unique_id; ?>"
+		>
 			<?php echo __( 'Open' ); ?>
 		</button>
 	</div>
 
-	<div data-wp-bind--hidden="!context.wceu2023.isOpen">
+	<div
+		data-wp-bind--hidden="!context.wceu2023.isOpen"
+		id="quiz-<?php echo $unique_id; ?>"
+	>
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
 			<button>
 				<?php echo __( 'Yes' ); ?>
