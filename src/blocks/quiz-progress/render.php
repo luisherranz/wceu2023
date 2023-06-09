@@ -9,7 +9,8 @@ $store = wp_store( array(
 		'wceu2023' => array(
 			'answered' => 0,
 			'allAnswered' => false,
-			'correct' => "?"
+			'correct' => "?",
+			'allCorrect' => false,
 		)
 	)
 ) );
@@ -27,6 +28,9 @@ $store = wp_store( array(
 	<div>
 		<strong><?php echo __( 'Correct' ); ?></strong>: 
 		<span data-wp-text="selectors.wceu2023.correct"></span>
+		<span data-wp-bind--hidden="!selectors.wceu2023.allCorrect">
+			<?php echo __( 'All correct, congratulations! 🎉' ); ?>
+		</span>
 	</div>
 
 	<div>

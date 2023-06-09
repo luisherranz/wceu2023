@@ -20,6 +20,13 @@ store( {
 							( v ) => v.current === v.correct
 					  ).length
 					: '?',
+			allCorrect: ( store ) => {
+				const { selectors, state } = store;
+				return (
+					selectors.wceu2023.correct( store ) ===
+					Object.keys( state.wceu2023.quizzes ).length
+				);
+			},
 		},
 	},
 	actions: {
