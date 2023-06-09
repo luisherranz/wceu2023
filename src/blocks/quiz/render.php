@@ -12,8 +12,7 @@ wp_store( array(
 	'selectors' => array(
 		'wceu2023' => array(
 			'toggleText' => __( 'Open menu' ),
-			'isAnswerYes' => false,
-			'isAnswerNo' => false,
+			'isActive' => false,
 		)
 	)
 ) );
@@ -46,15 +45,17 @@ wp_store( array(
 	>
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
 			<button
+				data-wp-context='{ "wceu2023": { "thisAnswer": true } }'
 				data-wp-effect="effects.wceu2023.focusOnOpen"
-				data-wp-on--click="actions.wceu2023.answerYes"
-				data-wp-class--active="selectors.wceu2023.isAnswerYes"
+				data-wp-on--click="actions.wceu2023.answer"
+				data-wp-class--active="selectors.wceu2023.isActive"
 			>
 				<?php echo __( 'Yes' ); ?>
 			</button>
 			<button
-				data-wp-on--click="actions.wceu2023.answerNo"
-				data-wp-class--active="selectors.wceu2023.isAnswerNo"
+				data-wp-context='{ "wceu2023": { "thisAnswer": false } }'
+				data-wp-on--click="actions.wceu2023.answer"
+				data-wp-class--active="selectors.wceu2023.isActive"
 			>
 				<?php echo __( 'No' ); ?>
 			</button>

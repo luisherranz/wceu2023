@@ -11,8 +11,8 @@ store( {
 					? state.wceu2023.closeText
 					: state.wceu2023.openText;
 			},
-			isAnswerYes: ( { context } ) => context.wceu2023.answer === true,
-			isAnswerNo: ( { context } ) => context.wceu2023.answer === false,
+			isActive: ( { context } ) =>
+				context.wceu2023.answer === context.wceu2023.thisAnswer,
 		},
 	},
 	actions: {
@@ -32,18 +32,12 @@ store( {
 					).focus();
 				}
 			},
-			answerYes: ( { context } ) => {
-				if ( context.wceu2023.answer === true ) {
+			answer: ( { context } ) => {
+				const answer = context.wceu2023.thisAnswer;
+				if ( context.wceu2023.answer === answer ) {
 					context.wceu2023.answer = null;
 				} else {
-					context.wceu2023.answer = true;
-				}
-			},
-			answerNo: ( { context } ) => {
-				if ( context.wceu2023.answer === false ) {
-					context.wceu2023.answer = null;
-				} else {
-					context.wceu2023.answer = false;
+					context.wceu2023.answer = answer;
 				}
 			},
 		},
