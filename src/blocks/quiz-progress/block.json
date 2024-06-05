@@ -13,5 +13,5 @@
 	"textdomain": "wceu2023",
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php",
-	"viewScript": "file:./view.js"
+	"viewScriptModule": "file:./view.js"
 }

@@ -1,46 +1,41 @@
+/**
+ * WordPress dependencies
+ */
 import { store } from '@wordpress/interactivity';
 
-store( {
+const { state, selectors } = store( 'wceu2023', {
 	selectors: {
-		wceu2023: {
-			answered: ( { state } ) =>
-				Object.values( state.wceu2023.quizzes ).filter(
-					( v ) => v.current !== null
-				).length,
-			allAnswered: ( store ) => {
-				const { selectors, state } = store;
-				return (
-					selectors.wceu2023.answered( store ) ===
-					Object.keys( state.wceu2023.quizzes ).length
-				);
-			},
-			correct: ( { state } ) =>
-				state.wceu2023.showAnswers
-					? Object.values( state.wceu2023.quizzes ).filter(
-							( v ) => v.current === v.correct
-					  ).length
-					: '?',
-			allCorrect: ( store ) => {
-				const { selectors, state } = store;
-				return (
-					selectors.wceu2023.correct( store ) ===
-					Object.keys( state.wceu2023.quizzes ).length
-				);
-			},
+		answered: () => {
+			return Object.values( state.quizzes ).filter(
+				( v ) => v.current !== null
+			).length;
+		},
+		allAnswered: () => {
+			return (
+				selectors.answered( store ) ===
+				Object.keys( state.quizzes ).length
+			);
+		},
+		correct: () =>
+			state.showAnswers
+				? Object.values( state.quizzes ).filter(
+						( v ) => v.current === v.correct
+				  ).length
+				: '?',
+		allCorrect: () => {
+			return selectors.correct() === Object.keys( state.quizzes ).length;
 		},
 	},
 	actions: {
-		wceu2023: {
-			checkAnswers: ( { state } ) => {
-				state.wceu2023.showAnswers = true;
-				state.wceu2023.selected = null;
-			},
-			reset: ( { state } ) => {
-				state.wceu2023.showAnswers = false;
-				Object.values( state.wceu2023.quizzes ).forEach( ( quiz ) => {
-					quiz.current = null;
-				} );
-			},
+		checkAnswers: () => {
+			state.showAnswers = true;
+			state.selected = null;
+		},
+		reset: () => {
+			state.showAnswers = false;
+			Object.values( state.quizzes ).forEach( ( quiz ) => {
+				quiz.current = null;
+			} );
 		},
 	},
 } );

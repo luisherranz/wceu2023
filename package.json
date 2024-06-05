@@ -4,15 +4,9 @@
 	"description": "WordCampp Europe 2023: Building Interactive Blocks, a step-by-step workshop",
 	"author": "luisherranz",
 	"scripts": {
-		"start": "concurrently 'wp-scripts start' 'wp-now start'",
-		"dev": "wp-scripts start",
-		"build": "wp-scripts build"
-	},
-	"devDependencies": {
-		"@wordpress/scripts": "^26.4.0",
-		"@wp-now/wp-now": "^0.1.49",
-		"concurrently": "^8.0.1",
-		"prettier": "npm:wp-prettier@2.8.5"
+		"start": "concurrently 'wp-scripts start --experimental-modules' 'wp-now start'",
+		"dev": "wp-scripts start --experimental-modules",
+		"build": "wp-scripts build --experimental-modules"
 	},
 	"prettier": {
 		"useTabs": true,
@@ -25,5 +19,14 @@
 		"parenSpacing": true,
 		"semi": true,
 		"arrowParens": "always"
+	},
+	"dependencies": {
+		"@wordpress/interactivity": "^5.4.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.6.0",
+		"@wp-now/wp-now": "^0.1.49",
+		"concurrently": "^8.0.1",
+		"prettier": "npm:wp-prettier@2.8.5"
 	}
 }
