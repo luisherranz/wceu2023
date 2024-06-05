@@ -2,9 +2,11 @@
 $state = wp_interactivity_state(
 	'wceu2023',
 	array(
+		'showAnswers' => false,
 		'answered'    => 0,
 		'allAnswered' => false,
-		'showAnswers' => false,
+		'correct'     => '?',
+		'allCorrect'  => false,
 	)
 );
 ?>
