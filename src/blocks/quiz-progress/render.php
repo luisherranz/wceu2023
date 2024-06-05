@@ -1,5 +1,5 @@
 <?php
-$store = wp_interactivity_state(
+$state = wp_interactivity_state(
 	'wceu2023',
 	array(
 		'answered'    => 0,
@@ -7,7 +7,6 @@ $store = wp_interactivity_state(
 		'showAnswers' => false,
 	)
 );
-
 ?>
 
 <div
@@ -18,18 +17,18 @@ $store = wp_interactivity_state(
 		<strong>
 			<?php echo esc_html_e( 'Answered' ); ?>
 		</strong>
-		<span data-wp-text="selectors.answered"></span>/<?php echo count( $store['quizzes'] ); ?>
+		<span data-wp-text="state.answered"></span>/<?php echo count( $state['quizzes'] ); ?>
 	</div>
 
 	<div>
-		<strong><?php echo __( 'Correct' ); ?></strong>:  <span data-wp-text="selectors.correct"></span>
-		<span data-wp-bind--hidden="!selectors.allCorrect">
+		<strong><?php echo __( 'Correct' ); ?></strong>:  <span data-wp-text="state.correct"></span>
+		<span data-wp-bind--hidden="!state.allCorrect">
 			<?php echo __( 'All correct, congratulations! 🎉' ); ?>
 		</span>
 	</div>
 	<div>
 		<button
-			data-wp-bind--disabled="!selectors.allAnswered"
+			data-wp-bind--disabled="!state.allAnswered"
 			data-wp-on--click="actions.checkAnswers"
 			data-wp-bind--hidden="state.showAnswers"
 		>

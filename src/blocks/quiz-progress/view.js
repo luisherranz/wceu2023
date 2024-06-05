@@ -3,27 +3,25 @@
  */
 import { store } from '@wordpress/interactivity';
 
-const { state, selectors } = store( 'wceu2023', {
-	selectors: {
-		answered: () => {
+const { state } = store( 'wceu2023', {
+	state: {
+		get answered() {
 			return Object.values( state.quizzes ).filter(
 				( v ) => v.current !== null
 			).length;
 		},
-		allAnswered: () => {
-			return (
-				selectors.answered( store ) ===
-				Object.keys( state.quizzes ).length
-			);
+		get allAnswered() {
+			return state.answered === Object.keys( state.quizzes ).length;
 		},
-		correct: () =>
-			state.showAnswers
+		get correct() {
+			return state.showAnswers
 				? Object.values( state.quizzes ).filter(
 						( v ) => v.current === v.correct
 				  ).length
-				: '?',
-		allCorrect: () => {
-			return selectors.correct() === Object.keys( state.quizzes ).length;
+				: '?';
+		},
+		get allCorrect() {
+			return state.correct === Object.keys( state.quizzes ).length;
 		},
 	},
 	actions: {
@@ -33,6 +31,7 @@ const { state, selectors } = store( 'wceu2023', {
 		},
 		reset: () => {
 			state.showAnswers = false;
+			state.selected = null;
 			Object.values( state.quizzes ).forEach( ( quiz ) => {
 				quiz.current = null;
 			} );
