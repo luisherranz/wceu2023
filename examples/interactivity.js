@@ -1,13 +1,15 @@
 import { store } from '@wordpress/interactivity';
 
-store( {
+store( 'wceu2023', {
 	actions: {
-		toggle: ( { context } ) => {
+		toggle() {
+			const context = getContext();
 			context.isOpen = ! context.isOpen;
 		},
 	},
-	effects: {
-		logIsOpen: ( { context } ) => {
+	callbacks: {
+		logIsOpen() {
+			const context = getContext();
 			// Log the value of `isOpen` each time it changes.
 			console.log( `Is open: ${ context.isOpen }` );
 		},
