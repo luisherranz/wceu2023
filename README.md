@@ -2,13 +2,25 @@
 
 Welcome to the GitHub repository of the [WordCamp Europe 2023 workshop, Building Interactive blocks](https://europe.wordcamp.org/2023/session/building-interactive-blocks-a-step-by-step-workshop/) by [Luis Herranz](https://twitter.com/luisherranz).
 
-In this workshop, we'll learn how to create interactive blocks using the [Interactivity API](https://make.wordpress.org/core/2023/03/30/proposal-the-interactivity-api-a-better-developer-experience-in-building-interactive-blocks/).
+In this workshop, we learned how to create interactive blocks using the [Interactivity API](https://make.wordpress.org/core/2023/03/30/proposal-the-interactivity-api-a-better-developer-experience-in-building-interactive-blocks/).
+
+---
+
+### [-– 📺 Click here to watch the workshop –-](https://wordpress.tv/2023/10/01/building-interactive-blocks-a-step-by-step-workshop/)
+
+---
+
+> **⚠️ Important note:** At the time of the workshop, the version of the Interactivity API was different and still wasn't included in WordPress Core. The workshop recording still refers to the old code
+>
+> The code of the `main` branch **has been updated to the latest version of the Interactivity API** so you can run it using the latest version of WordPress.
+>
+> If you want, you can still view the old code on the `step` branches: [old code](https://github.com/luisherranz/wceu2023/commits/step22/)
 
 ## Preparation steps 🧑‍🍳
 
 1. [Download Node](https://nodejs.org/)
 
-    _Not necessary if you have Node >= 16._
+    _Not necessary if you have Node >= 18._
 
 2. Clone this repository, or [download it](https://github.com/luisherranz/wceu23/archive/refs/heads/step0.zip)
 
@@ -17,8 +29,6 @@ In this workshop, we'll learn how to create interactive blocks using the [Intera
 3. Run `npm install`
 
     _This may take a while, so do it as soon as you get the repository._
-
-4. [Download the "Gutenberg ❤️ Interactivity API" plugin](https://github.com/WordPress/block-interactivity-experiments/raw/gutenberg-interactivity/gutenberg-interactivity.zip)
 
 That's it! You don't need to install anything or do anything else just yet.
 
@@ -34,7 +44,6 @@ Is time to code? Ok, let's go!
 
 1. Run `npm start`
 2. Go to `localhost:8881`
-3. Install the "Gutenberg ❤️ Interactivity" plugin
 
 That's it 💥
 
@@ -48,7 +57,7 @@ You can…
 
     _Not recommended unless you are already familiar with the Interactivity API._
 
-2.  **Copy and paste the [code snippets of each step from here](https://github.com/luisherranz/wceu23/commits/main)**
+2.  **Copy and paste the [code snippets of each step from here](https://github.com/luisherranz/wceu23/commits/step-22)**
 
     _Only recommended if you are familiar with block development._
 
@@ -62,14 +71,14 @@ You can…
     -   `git checkout step1`
     -   ...
 
-**Important**: you can see [the changes of each step here](https://github.com/luisherranz/wceu23/commits/main).
+**Important**: you can see [the changes of each step here](https://github.com/luisherranz/wceu23/commits/step-22).
 
 </details>
 
 ## Get involved! 🦸
 
-The **Interactivity API** is an initiative in progress. Got questions or feedback about it? We'd love to hear from you in the [GitHub Discussions](https://github.com/WordPress/block-interactivity-experiments/discussions).
+Got questions or feedback about it? We'd love to hear from you in the [GitHub Discussions](https://github.com/WordPress/gutenberg/discussions).
 
-Are you interested on contributing with code or documentation? Come to the [repository](https://github.com/WordPress/block-interactivity-experiments)!
+Are you interested on contributing with code or documentation? Come to the [repository](https://github.com/WordPress/gutenberg)!
 
 You can also find me in [Twitter](https://twitter.com/luisherranz), [GitHub](https://github.com/luisherranz/), or [Slack](https://wordpress.slack.com/client/T024MFP4J/D1KL49H6D) (always as `@luisherranz`).

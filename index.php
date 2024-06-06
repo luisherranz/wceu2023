@@ -11,20 +11,18 @@
  * Text Domain:       wceu2023
  */
 
+// Define plugin path constants.
+define( 'QUIZ_BLOCK_PATH', plugin_dir_path( __FILE__ ) );
+define( 'QUIZ_BLOCK_URL', plugin_dir_url( __FILE__ ) );
+
 /**
  * Automatically registers block types by scanning the build/blocks folder.
  *
  * This function searches for JSON files within each subfolder and registers
  * them as block types. It is triggered on WordPress 'init' action.
  */
-function wceu2023_auto_register_block_types()
-{
-		if (file_exists(__DIR__ . '/build/blocks/')) {
-				$block_json_files = glob(__DIR__ . '/build/blocks/*/block.json');
-				foreach ($block_json_files as $filename) {
-						$block_folder = dirname($filename);
-						register_block_type($block_folder);
-				};
-		};
+function wceu2023_auto_register_block_types() {
+	register_block_type_from_metadata( QUIZ_BLOCK_PATH . '/build/blocks/quiz' );
+	register_block_type_from_metadata( QUIZ_BLOCK_PATH . '/build/blocks/quiz-progress' );
 }
-add_action('init', 'wceu2023_auto_register_block_types');
+add_action( 'init', 'wceu2023_auto_register_block_types' );
